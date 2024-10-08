@@ -1,0 +1,15 @@
+.feedback {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.feedbackList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.feedbackItem {
+  font-size: 26px;
+  margin: 5px 0;
+  color: black;
+}
