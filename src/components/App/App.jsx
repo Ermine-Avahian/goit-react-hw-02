@@ -6,14 +6,16 @@ import Description from "./Descriptio/Description.jsx";
 
 const App = () => {
   const [feedback, setFeedback] = useState(() => {
-    const savedFeedback = localStorage.getItem("feedback");
-    return savedFeedback
-      ? JSON.parse(savedFeedback)
-      : { good: 0, neutral: 0, bad: 0 };
+    const savedFeedback = window.localStorage.getItem("feedback");
+    if (savedFeedback) {
+      return JSON.parse(savedFeedback);
+    } else {
+      return { good: 0, neutral: 0, bad: 0 };
+    }
   });
 
   useEffect(() => {
-    localStorage.setItem("feedback", JSON.stringify(feedback));
+    window.localStorage.setItem("feedback", JSON.stringify(feedback));
   }, [feedback]);
 
   const updateFeedback = (feedbackType) => {
